@@ -1,65 +1,76 @@
-import Image from "next/image";
+import ShuffleHero from "@/components/ShuffleHero";
+import CircularTestimonials from "@/components/CircularTestimonials";
+import ExpandableGallery from "@/components/ExpandableGallery";
+import ReviewsSection from "@/components/ClientsSection";
+import ContactSection from "@/components/ContactSection";
+import AboutSection3 from "@/components/AboutSection3";
+import MobileNav from "@/components/MobileNav";
+
+const MOCK_PHOTOGRAPHERS = [
+  {
+    name: "Alex Rivera",
+    designation: "Lead Photographer",
+    quote:
+      "Capturing the unspoken emotions between moments is where the true story lies.",
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+  },
+  {
+    name: "Sarah Chen",
+    designation: "Portrait Specialist",
+    quote:
+      "Light and shadow are my canvas. Every face has a unique geometry that deserves to be highlighted.",
+    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+  },
+  {
+    name: "Michael Torres",
+    designation: "Editorial Photographer",
+    quote:
+      "My goal is to freeze time in a way that feels cinematic, timeless, and completely authentic.",
+    src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-background">
+      <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-background/70 border-b border-border/50">
+        <div className="max-w-6xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between">
+          <span className="font-bold text-lg sm:text-xl tracking-tight">Studio.</span>
+          <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
+            <a href="#work" className="text-muted-foreground hover:text-foreground transition-colors">Work</a>
+            <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
+            <a href="#photographers" className="text-muted-foreground hover:text-foreground transition-colors">Photographers</a>
+            <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+          </div>
+          <MobileNav />
+        </div>
+      </nav>
+
+      <ShuffleHero />
+
+      <div id="photographers" className="py-12 sm:py-16 md:py-24 bg-muted/30">
+        <div className="max-w-6xl mx-auto px-4 mb-8 sm:mb-12 md:mb-16 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 sm:mb-4">Photographer Details</h2>
+          <p className="text-sm sm:text-base text-muted-foreground">
+            Get to know the creative minds behind the lens.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        <CircularTestimonials testimonials={MOCK_PHOTOGRAPHERS} />
+      </div>
+
+      <div id="work">
+        <ExpandableGallery />
+      </div>
+
+      <ReviewsSection />
+
+      <div id="about">
+        <AboutSection3 />
+      </div>
+
+      <div id="contact">
+        <ContactSection />
+      </div>
+    </main>
   );
 }
