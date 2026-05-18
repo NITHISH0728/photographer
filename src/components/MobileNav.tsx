@@ -46,7 +46,7 @@ export default function MobileNav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-lg"
+            className="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-lg"
           >
             <nav className="flex flex-col items-center justify-center h-full gap-8">
               {navLinks.map((link, i) => (

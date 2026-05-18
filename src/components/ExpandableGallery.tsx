@@ -87,9 +87,9 @@ export function ExpandableGallery() {
   React.useEffect(() => {
     const updateScale = () => {
       const w = window.innerWidth;
-      if (w < 480) setScaleFactor(0.45);
-      else if (w < 640) setScaleFactor(0.55);
-      else if (w < 768) setScaleFactor(0.7);
+      if (w < 480) setScaleFactor(0.7);
+      else if (w < 640) setScaleFactor(0.85);
+      else if (w < 768) setScaleFactor(0.9);
       else setScaleFactor(1);
     };
     updateScale();
@@ -104,7 +104,7 @@ export function ExpandableGallery() {
   });
 
   return (
-    <section className="relative w-full px-4 md:px-8 bg-background flex flex-col items-center justify-start min-h-[550px] sm:min-h-[700px] md:min-h-[850px] overflow-hidden py-12 sm:py-16 md:py-24">
+    <section className="relative w-full px-4 md:px-8 bg-background flex flex-col items-center justify-start min-h-[450px] sm:min-h-[600px] md:min-h-[850px] overflow-hidden py-12 sm:py-16 md:py-24">
       <LayoutGroup id={layoutGroupId}>
         <div className="w-full max-w-6xl mx-auto flex flex-col items-center">
           <div className="w-full h-12 flex items-center justify-between px-4 mb-2">
@@ -188,7 +188,7 @@ export function ExpandableGallery() {
                       "cursor-pointer overflow-hidden bg-muted",
                       isExpanded
                         ? "relative aspect-square rounded-xl sm:rounded-[2rem] md:rounded-[3rem] border-2 sm:border-4 md:border-[6px] border-background shadow-lg"
-                        : "absolute w-28 h-28 sm:w-36 sm:h-36 md:w-60 md:h-60 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[3rem] border-4 sm:border-[6px] border-background shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
+                        : "absolute w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[3rem] border-4 sm:border-[6px] border-background shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
                     )}
                     onClick={() => !isExpanded && setIsExpanded(true)}
                   >

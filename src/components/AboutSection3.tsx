@@ -37,7 +37,7 @@ export default function AboutSection3() {
     },
   };
   return (
-    <section className="py-6 sm:py-8 px-3 sm:px-4 bg-[#f9f9f9]" ref={heroRef}>
+    <section className="py-12 sm:py-16 md:py-24 px-4 bg-[#f9f9f9]" ref={heroRef}>
       <div className="max-w-6xl mx-auto">
         <div className="relative">
           {/* Header with social icons */}

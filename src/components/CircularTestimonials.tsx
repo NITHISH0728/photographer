@@ -287,6 +287,7 @@ export const CircularTestimonials = ({
           width: 100%;
           height: 14rem;
           perspective: 1000px;
+          margin-top: 3rem;
         }
         .testimonial-image {
           position: absolute;
