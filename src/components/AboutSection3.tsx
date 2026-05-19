@@ -12,8 +12,8 @@ export default function AboutSection3() {
       opacity: 1,
       filter: "blur(0px)",
       transition: {
-        delay: i * 0.4,
-        duration: 0.5,
+        delay: i * 0.15,
+        duration: 0.35,
       },
     }),
     hidden: {
@@ -27,8 +27,8 @@ export default function AboutSection3() {
       opacity: 1,
       filter: "blur(0px)",
       transition: {
-        delay: i * 0.4,
-        duration: 0.5,
+        delay: i * 0.15,
+        duration: 0.35,
       },
     }),
     hidden: {
@@ -135,7 +135,7 @@ export default function AboutSection3() {
                 preserveAspectRatio="xMidYMid slice"
                 width={"100%"}
                 height={"100%"}
-                xlinkHref="https://images.unsplash.com/photo-1718601980986-0ce75101d52d?w=1200&auto=format&fit=crop"
+                xlinkHref="/about-back.png"
               ></image>
             </svg>
           </TimelineContent>
@@ -150,13 +150,13 @@ export default function AboutSection3() {
               className="flex gap-4"
             >
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-red-500 font-bold">10+</span>
-                <span className="text-gray-600">years of experience</span>
+                <span className="text-red-500 font-bold">500+</span>
+                <span className="text-gray-600">events covered</span>
                 <span className="text-gray-300">|</span>
               </div>
               <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
-                <span className="text-red-500 font-bold">3 million</span>
-                <span className="text-gray-600">words</span>
+                <span className="text-red-500 font-bold">50K+</span>
+                <span className="text-gray-600">photos delivered</span>
               </div>
             </TimelineContent>
             <div className="lg:absolute right-0 bottom-16 flex lg:flex-col flex-row-reverse lg:gap-0 gap-4">
@@ -167,8 +167,8 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="flex lg:text-4xl sm:text-3xl text-2xl items-center gap-2 mb-2"
               >
-                <span className="text-red-500 font-semibold">100+</span>
-                <span className="text-gray-600 uppercase">brands</span>
+                <span className="text-red-500 font-semibold">200+</span>
+                <span className="text-gray-600 uppercase">clients</span>
               </TimelineContent>
               <TimelineContent
                 as="div"
@@ -177,8 +177,8 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="flex items-center gap-2 mb-2 sm:text-base text-xs"
               >
-                <span className="text-red-500 font-bold">30%</span>
-                <span className="text-gray-600">higher engagement</span>
+                <span className="text-red-500 font-bold">98%</span>
+                <span className="text-gray-600">client satisfaction</span>
                 <span className="text-gray-300 lg:hidden block">|</span>
               </TimelineContent>
             </div>
@@ -197,10 +197,10 @@ export default function AboutSection3() {
                   type: "spring",
                   stiffness: 250,
                   damping: 30,
-                  delay: 3,
+                  delay: 0.8,
                 }}
               >
-                Crafting Words That Make a Difference.
+                Capturing Moments That Last Forever.
               </VerticalCutReveal>
             </h1>
 
@@ -219,9 +219,10 @@ export default function AboutSection3() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify">
-                  My journey began as a passionate writer and evolved into a
-                  strategic copywriting career. I specialize in transforming
-                  ideas into compelling content that helps brands grow.
+                  My work is built around storytelling — not just taking photos,
+                  but preserving expressions, emotions, reactions, and details
+                  that people often miss in the moment. Every event has its own
+                  atmosphere, and I aim to capture it naturally and creatively.
                 </p>
               </TimelineContent>
               <TimelineContent
@@ -232,9 +233,10 @@ export default function AboutSection3() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify">
-                  Every brand has a story, and I specialize in telling yours
-                  with clarity and impact. By blending creativity with strategy,
-                  I write content that resonates with audiences.
+                  I don&apos;t believe great photography comes from expensive
+                  equipment alone. It comes from timing, observation, creativity,
+                  and understanding people. From weddings to concerts, college
+                  culturals to fashion shoots — I cover it all.
                 </p>
               </TimelineContent>
             </TimelineContent>
@@ -249,7 +251,7 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="text-red-500 text-2xl font-bold mb-2"
               >
-                SANGVI
+                NITHISH
               </TimelineContent>
               <TimelineContent
                 as="div"
@@ -258,7 +260,7 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="text-gray-600 text-sm mb-8"
               >
-                Copywriter | Content Strategist
+                Photographer | Visual Storyteller
               </TimelineContent>
 
               <TimelineContent
@@ -269,7 +271,7 @@ export default function AboutSection3() {
                 className="mb-6"
               >
                 <p className="text-gray-900 font-medium mb-4">
-                  Ready to transform your brand's message into results?
+                  Ready to capture your next unforgettable moment?
                 </p>
               </TimelineContent>
 
@@ -280,7 +282,7 @@ export default function AboutSection3() {
                 customVariants={revealVariants}
                 className="bg-neutral-900 hover:bg-neutral-950 shadow-lg shadow-neutral-900 border border-neutral-700 flex w-fit ml-auto gap-2 hover:gap-4 transition-all duration-300 ease-in-out text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg cursor-pointer font-semibold text-sm sm:text-base"
               >
-                LET'S COLLABORATE <ArrowRight className="" />
+                BOOK A SHOOT <ArrowRight className="" />
               </TimelineContent>
             </div>
           </div>

@@ -6,13 +6,14 @@ import { cn } from "@/lib/utils";
 
 export const ShuffleHero = () => {
   return (
-    <section className="w-full px-4 sm:px-8 py-8 sm:py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-6 sm:gap-8 max-w-6xl mx-auto min-h-[auto] md:min-h-[80vh]">
+    <section className="w-full">
+      <div className="px-4 sm:px-8 py-8 sm:py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-6 sm:gap-8 max-w-6xl mx-auto min-h-[auto] md:min-h-[80vh]">
       <div>
         <span className="block mb-4 text-xs md:text-sm text-primary font-medium">
           Better every day
         </span>
         <h3 className="text-3xl sm:text-4xl md:text-6xl font-semibold text-foreground">
-          Let's change it up a bit
+          Let&apos;s change it up a bit
         </h3>
         <p className="text-base md:text-lg text-muted-foreground my-4 md:my-6">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis in
@@ -27,6 +28,7 @@ export const ShuffleHero = () => {
         </button>
       </div>
       <ShuffleGrid />
+      </div>
     </section>
   );
 };

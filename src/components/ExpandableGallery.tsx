@@ -104,7 +104,33 @@ export function ExpandableGallery() {
   });
 
   return (
-    <section className="relative w-full px-4 md:px-8 bg-background flex flex-col items-center justify-start min-h-[450px] sm:min-h-[600px] md:min-h-[850px] overflow-hidden py-12 sm:py-16 md:py-24">
+    <section className="relative w-full bg-background flex flex-col items-center justify-start min-h-[450px] sm:min-h-[600px] md:min-h-[850px] overflow-hidden py-12 sm:py-16 md:py-24">
+      {/* Background Image with Blur */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url('/g-back.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          filter: "blur(2px)",
+          transform: "scale(1.05)",
+        }}
+      />
+      {/* Glassmorphic Overlay */}
+      <div className="absolute inset-0 z-[1] bg-white/25" />
+
+      {/* Gallery Heading */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 md:px-8 mb-6 sm:mb-10 text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground/90">
+          Gallery
+        </h2>
+        <p className="mt-2 text-sm sm:text-base text-muted-foreground">
+          A curated collection of our finest work.
+        </p>
+      </div>
+
+      <div className="relative z-10 w-full px-4 md:px-8">
       <LayoutGroup id={layoutGroupId}>
         <div className="w-full max-w-6xl mx-auto flex flex-col items-center">
           <div className="w-full h-12 flex items-center justify-between px-4 mb-2">
@@ -251,6 +277,7 @@ export function ExpandableGallery() {
           </motion.div>
         </div>
       </LayoutGroup>
+      </div>
     </section>
   );
 }

@@ -1,10 +1,10 @@
 "use client";
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Checkbox } from '@/components/ui/checkbox';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 
 interface ContactSectionProps {
   /**
@@ -22,7 +22,12 @@ interface ContactSectionProps {
   /**
    * Array of social media links. Each object should have an 'id', 'name', 'iconSrc', and 'href'.
    */
-  socialLinks?: Array<{ id: string; name: string; iconSrc: string; href: string }>;
+  socialLinks?: Array<{
+    id: string;
+    name: string;
+    iconSrc: string;
+    href: string;
+  }>;
   /**
    * Placeholder image for the background.
    */
@@ -35,9 +40,24 @@ interface ContactSectionProps {
 }
 
 const defaultSocialLinks = [
-  { id: '1', name: 'X', iconSrc: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/x.svg', href: '#x' },
-  { id: '2', name: 'Instagram', iconSrc: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg', href: '#instagram' },
-  { id: '3', name: 'LinkedIn', iconSrc: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg', href: '#linkedin' },
+  {
+    id: "1",
+    name: "X",
+    iconSrc: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/x.svg",
+    href: "#x",
+  },
+  {
+    id: "2",
+    name: "Instagram",
+    iconSrc: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg",
+    href: "#instagram",
+  },
+  {
+    id: "3",
+    name: "LinkedIn",
+    iconSrc: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/linkedin.svg",
+    href: "#linkedin",
+  },
 ];
 
 export const ContactSection: React.FC<ContactSectionProps> = ({
@@ -49,13 +69,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   onSubmit,
 }) => {
   const [formData, setFormData] = React.useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
     projectType: [] as string[],
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -78,9 +100,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   };
 
   const projectTypeOptions = [
-    'Website', 'Mobile App', 'Web App', 'E-Commerce',
-    'Brand Identity', '3D & Animation', 'Social Media Marketing',
-    'Brand Strategy & Consulting', 'Other'
+    "Wedding",
+    "Birthday Party",
+    "Sangeet",
+    "Marriage",
+
+    "Other",
   ];
 
   return (
@@ -122,12 +147,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
           {/* Right Side: Contact Form */}
           <div className="bg-background/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-xl border border-border">
-            <h2 className="text-2xl font-bold text-foreground mb-6">{mainMessage}</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-6">
+              {mainMessage}
+            </h2>
 
             {/* Email & Socials */}
             <div className="mb-6">
               <p className="text-muted-foreground mb-2">Mail us at</p>
-              <a href={`mailto:${contactEmail}`} className="text-primary hover:underline font-medium">
+              <a
+                href={`mailto:${contactEmail}`}
+                className="text-primary hover:underline font-medium"
+              >
                 {contactEmail}
               </a>
               <div className="flex items-center space-x-3 mt-4">
@@ -135,7 +165,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                 {socialLinks.map((link) => (
                   <Button key={link.id} variant="outline" size="icon" asChild>
                     <a href={link.href} aria-label={link.name}>
-                      <img src={link.iconSrc} alt={link.name} className="h-4 w-4 dark:invert" />
+                      <img
+                        src={link.iconSrc}
+                        alt={link.name}
+                        className="h-4 w-4 dark:invert"
+                      />
                     </a>
                   </Button>
                 ))}
@@ -150,16 +184,33 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Your name</Label>
-                  <Input id="name" name="name" placeholder="Your name" value={formData.name} onChange={handleChange} required />
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">Briefly describe your project idea...</Label>
+                <Label htmlFor="message">
+                  Briefly describe your project idea...
+                </Label>
                 <Textarea
                   id="message"
                   name="message"
@@ -177,11 +228,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   {projectTypeOptions.map((option) => (
                     <div key={option} className="flex items-center space-x-2">
                       <Checkbox
-                        id={option.replace(/\s/g, '-').toLowerCase()}
+                        id={option.replace(/\s/g, "-").toLowerCase()}
                         checked={formData.projectType.includes(option)}
-                        onCheckedChange={(checked) => handleCheckboxChange(option, checked as boolean)}
+                        onCheckedChange={(checked) =>
+                          handleCheckboxChange(option, checked as boolean)
+                        }
                       />
-                      <Label htmlFor={option.replace(/\s/g, '-').toLowerCase()} className="text-sm font-normal">
+                      <Label
+                        htmlFor={option.replace(/\s/g, "-").toLowerCase()}
+                        className="text-sm font-normal"
+                      >
                         {option}
                       </Label>
                     </div>
@@ -208,7 +264,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             opacity: 1;
           }
           100% {
-            transform: translateY(-100vh) translateX(calc(var(--rand-x-offset) * 10vw)) scale(1.2);
+            transform: translateY(-100vh)
+              translateX(calc(var(--rand-x-offset) * 10vw)) scale(1.2);
             opacity: 0;
           }
         }
